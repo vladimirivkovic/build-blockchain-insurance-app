@@ -1,4 +1,4 @@
-FROM docker.io/hyperledger/fabric-ca:latest
+FROM docker.io/hyperledger/fabric-ca:1.4.7
 
 RUN mkdir /ca
 COPY fabric-ca-server-config.yaml /ca

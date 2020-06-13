@@ -19,7 +19,7 @@ dockerCaPull() {
       docker tag hyperledger/fabric-ca:$CA_TAG hyperledger/fabric-ca
 }
 
-BUILD=
+BUILD=true
 DOWNLOAD=
 if [ $# -eq 0 ]; then
     BUILD=true

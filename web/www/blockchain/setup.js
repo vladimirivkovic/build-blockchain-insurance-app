@@ -170,7 +170,7 @@ function getAdminOrgs() {
       const socketPath = process.env.DOCKER_SOCKET_PATH ||
       (process.platform === 'win32' ? '//./pipe/docker_engine' : '/var/run/docker.sock');
       const ccenvImage = process.env.DOCKER_CCENV_IMAGE ||
-        'hyperledger/fabric-ccenv:latest';
+        'hyperledger/fabric-ccenv:1.4.7';
       const listOpts = { socketPath, method: 'GET', path: '/images/json' };
       const pullOpts = {
         socketPath, method: 'POST',

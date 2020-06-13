@@ -316,7 +316,7 @@ FROM docker.io/library/node:8.9.0
 ENV NODE_ENV production
 ENV PORT 3000
 ENV DOCKER_SOCKET_PATH /host/var/run/docker.sock
-ENV DOCKER_CCENV_IMAGE hyperledger/fabric-ccenv:latest
+ENV DOCKER_CCENV_IMAGE hyperledger/fabric-ccenv:1.4.7
 RUN mkdir /app
 COPY . /app
 WORKDIR /app

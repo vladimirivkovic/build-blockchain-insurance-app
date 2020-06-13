@@ -1,27 +1,4 @@
 ---
-Profiles:
-  FourOrgsGenesis:
-    Orderer:
-      <<: *OrdererDefaults
-      Organizations:
-      - *OrdererOrg
-    Consortiums:
-      InsuranceConsortium:
-        Organizations:
-        - *InsuranceOrg
-        - *ShopOrg
-        - *RepairShopOrg
-        - *PoliceOrg
-  FourOrgsChannel:
-    Consortium: InsuranceConsortium
-    Application:
-      <<: *ApplicationDefaults
-      Organizations:
-      - *InsuranceOrg
-      - *ShopOrg
-      - *RepairShopOrg
-      - *PoliceOrg
-
 Organizations:
 - &OrdererOrg
   Name: OrdererOrg
@@ -69,3 +46,26 @@ Orderer: &OrdererDefaults
 
 Application: &ApplicationDefaults
   Organizations:
+
+Profiles:
+  FourOrgsGenesis:
+    Orderer:
+      <<: *OrdererDefaults
+      Organizations:
+      - *OrdererOrg
+    Consortiums:
+      InsuranceConsortium:
+        Organizations:
+        - *InsuranceOrg
+        - *ShopOrg
+        - *RepairShopOrg
+        - *PoliceOrg
+  FourOrgsChannel:
+    Consortium: InsuranceConsortium
+    Application:
+      <<: *ApplicationDefaults
+      Organizations:
+      - *InsuranceOrg
+      - *ShopOrg
+      - *RepairShopOrg
+      - *PoliceOrg
