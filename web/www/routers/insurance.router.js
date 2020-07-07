@@ -151,13 +151,13 @@ router.post('/api/file-claim', async (req, res) => {
     const { user, contractUuid, claim } = req.body;
     const { username, password } = user;
     if (await InsurancePeer.authenticateUser(username, password)) {
-      await InsurancePeer.fileClaim({
+      const uuid = await InsurancePeer.fileClaim({
         contractUuid,
         date: new Date(),
         description: claim.description,
         isTheft: claim.isTheft
       });
-      res.json({ success: true });
+      res.json({ success: true, uuid: uuid });
       return;
     } else {
       res.json({ error: 'Invalid login!' });
